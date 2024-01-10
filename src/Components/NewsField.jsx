@@ -22,7 +22,7 @@ function NewsField({ category, qry }) {
         setPage(1);
         setPostSize(10);
         window.scrollTo({ top: 0, behavior: 'smooth' })
-        
+
     }, [category, qry])
 
     const getmore = () => {
@@ -35,6 +35,7 @@ function NewsField({ category, qry }) {
         <div className='field'>
             {news && category == "general" ? <Homepage /> : null}
 
+            {!news.totalResults == 0 ? (<>
             <div className='PostField'>
                 {
 
@@ -58,7 +59,14 @@ function NewsField({ category, qry }) {
             </div >
             <div>
                 {news && page === totalPage ? (<span className='newsEnd'>You are up-to-date! Explore other categories for more news.</span>) : (<button className='nextBtn' onClick={getmore}>Get More</button>)}
-            </div>
+            </div> </>) :(<div className='noData'>
+  <h1>Oops! No news found for <u>{qry}</u></h1>
+  <p>It seems like there are no news articles matching your search.</p>
+  <img src="https://your-image-url.com/no-data-image.png" alt="No data found" />
+</div>
+)
+            }
+
         </div>
     ) : (<Loader />)
 }
