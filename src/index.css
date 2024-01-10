@@ -1,0 +1,346 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #282c34;
+  /* Dark background color */
+
+}
+
+::selection {
+
+  background: transparent;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(38, 32, 32, 0.7);
+  /* Semi-transparent dark background */
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  border-bottom: 1px solid white;
+}
+
+footer {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+main {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  /* padding-bottom: 80px; */
+}
+
+.field {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  width: 190px;
+  height: fit-content;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.logo a h1 {
+  font-size: 3rem;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+
+  /* Set background clip to text so the gradient only applies to the text */
+  background-clip: text;
+
+  /* Use a fallback color in case gradients are not supported */
+  color: transparent;
+}
+
+nav {
+  width: 100%;
+  border-radius: 30px;
+  padding: 30px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+li {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+  /* White text color */
+}
+
+li a:hover {
+  color: #d44d5c;
+  /* Hover color */
+}
+
+.activeNav {
+  color: red;
+}
+
+.home {
+  width: 100vw;
+  height: 420px;
+  position: relative;
+  margin-top: -80px;
+}
+.home input{
+  position: absolute;
+  top: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  left: 50%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  transform: translate(-50%, -50%);
+}
+.home form button{
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  top: 100px;
+
+  padding: 10px;
+  font-size: 1rem;
+  left: 55%;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  transform: translate(-50%, -50%);
+}
+
+.pic {
+  width: 100%;
+  height: 410px;
+  background-image: url("https://images.unsplash.com/photo-1599995903128-531fc7fb694b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&w=1000&q=80");
+  background-position: center;
+  background-size: cover;
+  filter: blur(2px);
+}
+
+.hometext {
+  color: #fff;
+  /* White text color */
+  position: absolute;
+  top: 200px;
+  right: 30px;
+  font-size: 3rem;
+}
+
+.PostField {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.card {
+  max-width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: #606c76;
+  /* Card background color */
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card h5 {
+  padding: 10px;
+  margin: 0;
+  background-color: #333;
+  color: #fff;
+}
+
+.card h3 {
+  padding: 10px;
+  margin: 0;
+  
+}
+.card a{
+  color: black;
+  text-decoration: none;
+
+}
+.card a:visited{
+  color: rgb(120, 39, 39);
+}
+.card p {
+  padding: 10px;
+  margin: 0;
+}
+
+.card p.description {
+  margin-top: auto;
+}
+
+.card button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #3498db;
+  /* Button background color */
+  color: #fff;
+  /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.card button:hover {
+  background-color: #2980b9;
+  /* Hover background color */
+}
+
+.nextBtn {
+  width: 200px;
+  /* font-size: 0.5rem; */
+  background-color: #d44d5c;
+  /* Button background color */
+  color: #fff;
+  /* White text color */
+  font-size: 1.5rem;
+  padding: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.newsEnd{
+  color: white;
+}
+
+
+.noData{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+
+/* Loader..... */
+/* HTML: <div class="loader"></div> */
+.LoaderDiv{
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  color: #f03355;
+  background: conic-gradient(currentColor 0 270deg,#0000 0);
+  border-radius: 50%;
+  animation: l14-0 4s infinite linear;
+}
+.loader::before {
+  content: "";
+  display: block;
+  height: 50%;
+  width: 50%;
+  border-top-left-radius: 100px;
+  background: currentColor;
+  animation: l14 0.5s infinite alternate;
+}
+@keyframes l14-0 {
+    0%,24.99%  {transform: rotate(0deg)}
+    25%,49.99% {transform: rotate(90deg)}
+    50%,74.99% {transform: rotate(180deg)}
+    75%,100%   {transform: rotate(270deg)}
+}
+@keyframes l14 {
+    100%  {transform: translate(-10px,-10px)}
+}
+/* Loader end */
+
+
+@media (max-width: 768px) {
+  .PostField {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .card img {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .PostField {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    max-height: 200px;
+  }
+}
