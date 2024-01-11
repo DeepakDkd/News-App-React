@@ -10,7 +10,7 @@ function useNews({ country, category, postSize, qry }) {
   const API_KEY = import.meta.env.VITE_API_KEY
   console.log(API_KEY)
 
-
+  
   useEffect(() => {
 
     const api = qry ? `https://newsapi.org/v2/everything?q=${qry}&apiKey=${API_KEY}&page=1&pageSize=${postSize}` : `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}&page=1&pageSize=${postSize}`

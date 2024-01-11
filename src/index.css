@@ -131,10 +131,11 @@ li a:hover {
 
 .home {
   width: 100vw;
-  height: 420px;
+  height: 550px;
   position: relative;
   margin-top: -80px;
 }
+
 .home input{
   position: absolute;
   top: 100px;
@@ -163,22 +164,50 @@ li a:hover {
 
 .pic {
   width: 100%;
-  height: 410px;
-  background-image: url("https://images.unsplash.com/photo-1599995903128-531fc7fb694b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&w=1000&q=80");
-  background-position: center;
+  height: 500px;
+  /* background-imag  e: url("https://images.unsplash.com/photo-1599995903128-531fc7fb694b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&w=1000&q=80"); */
+  background-position: top;
   background-size: cover;
-  filter: blur(2px);
+  object-fit: contain;
+  filter: blur(1px);
+  filter: brightness(.5);
 }
 
+
 .hometext {
-  color: #fff;
-  /* White text color */
+  color: white;
   position: absolute;
+  border-radius: 5px;
   top: 200px;
   right: 30px;
   font-size: 3rem;
+  /* box-shadow: ; */
+  background-color: rgba(121, 31, 31, 0.726);
+  padding: 5px;
 }
+.slidingNews{
+  display: flex;
+  background-color: rgba(255, 0, 0, 0.349);
+  border: 2px solid red;
 
+}
+.slidingNews div{
+  width: 120px;
+  font-size: 1.5rem;
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* text-align: center; */
+}
+.home marquee{
+  padding: 5px;
+  font-style:normal;
+  font-size: 2rem;
+  /* background-color: rgba(255, 0, 0, 0.349); */
+  color: white;
+}
 .PostField {
   width: 100%;
   min-height: 100vh;
@@ -282,13 +311,14 @@ li a:hover {
 
 .noData {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   background-color: #404040;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-radius: 10px;
+  background: linear-gradient(to bottom, transparent 0%, #404040 20%, #404040 100%);
 }
 
 .noData h1 {
@@ -308,11 +338,12 @@ li a:hover {
   text-align: center;
   margin-bottom: 30px;
 }
-
+.noDataimg{
+  width: 300px;
+}
 .noData img {
   max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  mix-blend-mode: color-burn;
 }
 
 
