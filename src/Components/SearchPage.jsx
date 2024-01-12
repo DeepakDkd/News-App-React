@@ -10,7 +10,6 @@ function SearchPage() {
 
 
     
-    console.log(qry)
     return (
         <div className="search-container">
             <form onSubmit={()=>(navigate(`/search/${qry}`))}>

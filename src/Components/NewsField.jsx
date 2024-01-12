@@ -3,6 +3,7 @@ import useNews from '../Hooks/useNews';
 import Homepage from './Homepage';
 import { Link } from 'react-router-dom';
 import Loader from './Loader';
+import NotFound from './NotFound';
 
 function NewsField({ category, qry }) {
     // State variables for managing pagination
@@ -85,15 +86,7 @@ function NewsField({ category, qry }) {
                 </>
             ) : (
                 // Render no data message if no articles found
-                <div className='noData'>
-                    <h1>
-                        Oops! No news found for <u>{qry}</u>
-                    </h1>
-                    <p>It seems like there are no news articles matching your search.</p>
-                    <div className='noDataimg'>
-                        <img src='https://2.bp.blogspot.com/-SXNnmaKWILg/XoNVoMTrxgI/AAAAAAAAxnM/7TFptA1OMC8uk67JsG5PcwO_8fAuQTzkQCLcBGAsYHQ/s1600/giphy.gif' alt='No data found' />
-                    </div>
-                </div>
+                <NotFound qry={qry}/>
             )}
         </div>
     ) : (
